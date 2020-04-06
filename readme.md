@@ -40,4 +40,10 @@ $pages = $('.nHalf');
 var url = $($pages[0]).children('a:first').attr('href');
 window.location.href = url;
 ```
-
+## 图片
+- 输入指令
+![avatar](src/main/resources/images/控制台输入代码.jpg)
+- 等待
+![avatar](src/main/resources/images/答题完毕.jpg)
+- 完成，切换到下一个章节
+![avatar](src/main/resources/images/答题完毕自动刷新.jpg)
