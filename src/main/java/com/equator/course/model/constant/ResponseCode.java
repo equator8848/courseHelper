@@ -1,4 +1,4 @@
-package com.equator.course.model;
+package com.equator.course.model.constant;
 
 /**
  * Created by Equator on 2019/8/20

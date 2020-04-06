@@ -1,6 +1,6 @@
 package com.equator.course.service.util;
 
-import com.equator.course.model.ResponseCode;
+import com.equator.course.model.constant.ResponseCode;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
