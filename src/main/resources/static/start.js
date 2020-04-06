@@ -16,5 +16,13 @@ s.src = "https://www.equator8848.xyz/courseHelper/singleGetAnswer.js";
 s.charset = 'utf-8';
 document.getElementsByTagName('head')[0].appendChild(s);
 
+// next
+window.location.reload();
+setTimeout(function () {
+    $pages = $('.nHalf');
+    var url = $($pages[0]).children('a:first').attr('href');
+    window.location.href = url;
+},1500);
+
 
 
