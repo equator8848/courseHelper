@@ -39,7 +39,7 @@ jquery.onload = function () {
             });
             console.log('--------');
         }
-        console.log("请等待三秒，以免提交过快...完成之后会自动刷新，然后切换章节")
+        console.log("请等待一段时间（每道题等待0.5秒），以免提交过快...完成之后会自动刷新，然后切换章节")
         setTimeout(function () {
             $('.btn100_org:first').click();
             $('.aui_state_highlight:first').click();
