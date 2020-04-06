@@ -7,6 +7,7 @@ port="12580"
 git pull
 
 mvn clean package -Dmaven.test.skip=true
+
 mvn install
 
 pid=`lsof -i:$port | tail -1 | awk '{ print $2 }'`

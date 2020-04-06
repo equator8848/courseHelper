@@ -10,16 +10,11 @@ jquery.onload = function () {
         var metaString = '<meta charset="UTF-8">';
         $("head:first").append(metaString);
         alert('欢迎使用由Equator提供的刷题脚本（本脚本仅供娱乐）...');
-        $pages = $('.nAll,.nHalf');
-        var host = document.domain;
-        for (var i = 0; i < $pages.length; i++) {
-            var url = $($pages[i]).children('a:first').attr('href');
-            var newPage = host + "/wk/" + url;
-            console.log(newPage);
-            // window.location.href = url;
-            // $($pages[i]).children('a:first').click();
-            window.open(url,"_blank");
-        }
+        $pages = $('.nHalf');
+        var url = $($pages[0]).children('a:first').attr('href');
+        window.location.href = url;
+
+
 
 
         // 获取一页的答案

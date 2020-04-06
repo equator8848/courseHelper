@@ -39,7 +39,11 @@ jquery.onload = function () {
             });
             console.log('--------');
         }
-        $('.btn100_org:first').click();
-        $('.aui_state_highlight:first').click();
+        console.log("请等待三秒，以免提交过快...")
+        setTimeout(function () {
+            $('.btn100_org:first').click();
+            $('.aui_state_highlight:first').click();
+            window.location.reload();
+        },3000);
     })
 }
