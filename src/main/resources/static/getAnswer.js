@@ -9,22 +9,50 @@ jquery.onload = function () {
         // 中文显示
         var metaString = '<meta charset="UTF-8">';
         $("head:first").append(metaString);
-    })
-    alert('欢迎使用由Equator提供的刷题脚本（本脚本仅供娱乐）...');
-    // 获取一页的答案
-    var $items = $("input[disabled='disabled']");
-    for (var i = 0; i < $items.length; i++) {
-        $($items[i]).removeAttr('disabled');
-    }
-
-    var $questionList = $('.ed-ans');
-    for (var i = 0; i < $questionList.length; i++) {
-        var questionTitle = $($questionList[i]).find('p:first').html();
-        console.log(questionTitle);
-        var questionAnswers = $($questionList[i]).find("input[checked='checked']");
-        for (var j = 0; j < questionAnswers.length; j++) {
-            console.log($(questionAnswers[j]).val());
+        alert('欢迎使用由Equator提供的刷题脚本（本脚本仅供娱乐）...');
+        // 获取一页的答案
+        var $items = $("input[disabled='disabled']");
+        for (var i = 0; i < $items.length; i++) {
+            $($items[i]).removeAttr('disabled');
         }
-        console.log('--------');
-    }
+        var attopAnswers = new Array();
+        var $questionList = $('.ed-ans');
+        for (var i = 0; i < $questionList.length; i++) {
+            var questionTitle = $($questionList[i]).find('p:first').html();
+            console.log(questionTitle);
+            var questionAnswers = $($questionList[i]).find("input[checked='checked']");
+            var tempArr = new Array();
+            for (var j = 0; j < questionAnswers.length; j++) {
+                console.log($(questionAnswers[j]).val());
+                tempArr.push($(questionAnswers[j]).val());
+            }
+            if (tempArr.length > 0) {
+                attopAnswers.push({
+                    'questionTitle': questionTitle,
+                    'answerList': tempArr.join(',')
+                });
+            }
+            console.log('--------');
+        }
+        console.log(attopAnswers);
+        // 上传答案
+        $.post('https://www.equator8848.xyz/courseHelper/api/attop/uploadAnswer',{
+            attopAnswerReq: attopAnswers
+        },function (data) {
+            if (data.code == 200) {
+                console.log('题库上传成功');
+            }
+        })
+        // $.ajax({
+        //     url: 'https://www.equator8848.xyz/courseHelper/api/attop/uploadAnswer',
+        //     data: {
+        //         attopAnswerReq: attopAnswers
+        //     },
+        //     success:function (data) {
+        //         if (data.code == 200) {
+        //             console.log('题库上传成功');
+        //         }
+        //     }
+        // });
+    })
 }
