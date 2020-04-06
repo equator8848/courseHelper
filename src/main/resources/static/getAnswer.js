@@ -36,23 +36,30 @@ jquery.onload = function () {
         }
         console.log(attopAnswers);
         // 上传答案
-        $.post('https://www.equator8848.xyz/courseHelper/api/attop/uploadAnswer',{
-            attopAnswerReq: attopAnswers
-        },function (data) {
-            if (data.code == 200) {
-                console.log('题库上传成功');
-            }
-        })
-        // $.ajax({
-        //     url: 'https://www.equator8848.xyz/courseHelper/api/attop/uploadAnswer',
-        //     data: {
-        //         attopAnswerReq: attopAnswers
-        //     },
-        //     success:function (data) {
-        //         if (data.code == 200) {
-        //             console.log('题库上传成功');
-        //         }
+        // $.post('https://www.equator8848.xyz/courseHelper/api/attop/uploadAnswer',{
+        //     attopAnswerReq: attopAnswers
+        // },function (data) {
+        //     if (data.code == 200) {
+        //         console.log('题库上传成功');
         //     }
-        // });
+        // })
+        $.ajax({
+            type: 'POST',
+            url: 'https://www.equator8848.xyz/courseHelper/api/attop/uploadAnswer',
+            data: {
+                attopAnswerReq: attopAnswers
+            },
+            dataType: 'JSON',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            success: function (data) {
+                if (data.code == 200) {
+                    console.log('题库上传成功');
+                } else {
+                    console.log('题库上传失败');
+                }
+            }
+        });
     })
 }
