@@ -39,11 +39,11 @@ jquery.onload = function () {
             });
             console.log('--------');
         }
-        console.log("请等待三秒，以免提交过快...")
+        console.log("请等待三秒，以免提交过快...完成之后会自动刷新，然后切换章节")
         setTimeout(function () {
             $('.btn100_org:first').click();
             $('.aui_state_highlight:first').click();
             window.location.reload();
-        },3000);
+        }, $questionList.length * 500);
     })
 }
