@@ -44,6 +44,6 @@ jquery.onload = function () {
             $('.btn100_org:first').click();
             $('.aui_state_highlight:first').click();
             window.location.reload();
-        }, $questionList.length * 500);
+        }, $questionList.length * 800);
     })
 }
