@@ -28,8 +28,8 @@ jquery.onload = function () {
             }
             if (tempArr.length > 0) {
                 attopAnswers.push({
-                    'questionTitle': questionTitle,
-                    'answerList': tempArr.join(',')
+                    "questionTitle": questionTitle,
+                    "answerList": tempArr.join(',')
                 });
             }
             console.log('--------');
@@ -46,15 +46,16 @@ jquery.onload = function () {
         $.ajax({
             type: 'POST',
             url: 'https://www.equator8848.xyz/courseHelper/api/attop/uploadAnswer',
-            data: {
-                attopAnswerReq: attopAnswers
-            },
+            data: JSON.stringify({
+                "attopAnswers": attopAnswers
+            }),
             dataType: 'JSON',
+            traditional: true,
             headers: {
-                'Content-Type': 'application/json'
+                "Content-Type": 'application/json;charset=utf-8'
             },
             success: function (data) {
-                if (data.code == 200) {
+                if (data.status == 200) {
                     console.log('题库上传成功');
                 } else {
                     console.log('题库上传失败');

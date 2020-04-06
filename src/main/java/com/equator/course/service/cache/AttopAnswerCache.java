@@ -20,10 +20,10 @@ public class AttopAnswerCache {
     private RedisTemplate redisTemplate;
 
     public void setCache(String questionTitle, String answerList) {
-        redisTemplate.opsForHash().put(CacheKeyEnum.ATTOP_ANWSER_CACHE_NEVER.getValue(), MD5Util.encry(questionTitle), answerList);
+        redisTemplate.opsForHash().put(CacheKeyEnum.ATTOP_ANWSER_CACHE_NEVER.getValue(), questionTitle, answerList);
     }
 
     public String getCache(String questionTitle) {
-        return (String) redisTemplate.opsForHash().get(CacheKeyEnum.ATTOP_ANWSER_CACHE_NEVER.getValue(), MD5Util.encry(questionTitle));
+        return (String) redisTemplate.opsForHash().get(CacheKeyEnum.ATTOP_ANWSER_CACHE_NEVER.getValue(), questionTitle);
     }
 }
