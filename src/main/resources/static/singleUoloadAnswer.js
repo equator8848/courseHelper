@@ -40,7 +40,7 @@ jquery.onload = function () {
             url: 'https://www.equator8848.xyz/courseHelper/api/attop/uploadAnswer',
             data: JSON.stringify({
                 "attopAnswers": attopAnswers,
-                "key": "equator"
+                "key": "123456"
             }),
             dataType: 'JSON',
             traditional: true,

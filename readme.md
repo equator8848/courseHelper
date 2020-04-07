@@ -12,7 +12,7 @@
 2. 按住键盘Ctrl键，点击每一节的标题打开多个标签页（可以并行地刷时间）
 ![avatar](src/main/resources/images/多开.png)
 ![avatar](src/main/resources/images/标签页多开.jpg)
-3. 在每一个标签页按F12呼出控制台，输入命令，等待即可
+3. 在每一个标签页按F12呼出控制台，输入命令，等待即可时间刷完即可
 ```
 媒体与问题
 var s = document.createElement('script');
@@ -51,7 +51,7 @@ document.getElementsByTagName('head')[0].appendChild(s);
 4. 输入对应代码即可上传答案（将问题与答案上传到服务器保存）
 5. 进入第一章第二节的页面，重复以上步骤
 6. [Js代码](/src/main/resources/static/singleUoloadAnswer.js) 
-7. 上传通道需要密钥，请联系管理员获取！
+7. 为了防止答案被污染，上传通道需要密钥，请联系管理员获取！
 
 
 ## 截图说明
