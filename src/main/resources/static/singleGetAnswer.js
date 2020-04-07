@@ -15,6 +15,55 @@ jquery.onload = function () {
         });
         // 中文显示
         console.log('欢迎使用由Equator提供的刷题脚本（本脚本仅供娱乐）...');
+        // 媒体评价
+        $mediaBtns = $('.BT_ping');
+        idx = 0;
+        doMediaAction(idx);
+
+        function doMediaAction(idx) {
+            if (idx > $mediaBtns.length) {
+                return;
+            }
+            if ($($mediaBtns[idx]).html() != "已评价") {
+                console.log("点击评论按钮");
+                $($mediaBtns[idx]).click();
+                console.log("点击好评按钮");
+                $("#pageiframe").contents().find(".ping_btn_3:first").click();
+                console.log("点击确认按钮");
+                $("#pageiframe").contents().find(".aui_state_highlight:first").click();
+                console.log("点击关闭按钮");
+                $(".aui_close").click();
+            }
+            doMediaAction(idx++);
+        }
+
+
+        // $($mediaBtns[mediaIdx]).click(function () {
+        //                     console.log("点击评价按钮");
+        //                     $('.ping_btn_3').click(function () {
+        //                         console.log("点击好评按钮");
+        //                         $('.aui_state_highlight').click(function () {
+        //                             console.log("点击确认按钮");
+        //                             $('.aui_close').click(function () {
+        //                                 console.log("点击关闭按钮")
+        //                             });
+        //                             $('.aui_close').click();
+        //                         });
+        //                         $('.aui_state_highlight').click();
+        //                     });
+        //                     $('.ping_btn_3').click();
+        //                 });
+        // for (var i = 0; i < $mediaBtns.length; i++) {
+        //     if ($($mediaBtns[i]).html() == "已评价") {
+        //         console.log("已评价");
+        //         continue;
+        //     }
+        //     console.log("未评价");
+        //     $($mediaBtns[i]).click();
+        //     $('.ping_btn_3').click();
+        //     $('.aui_state_highlight').click();
+        //     $('.aui_close').click();
+        // }
         var $questionList = $('.un-ans');
         for (var i = 0; i < $questionList.length; i++) {
             var questionTitle = $($questionList[i]).find('p:first').html();
