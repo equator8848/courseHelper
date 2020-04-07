@@ -33,3 +33,4 @@ build/
 
 ### self ###
 application-online.properties
+SecurityConfiguration.java

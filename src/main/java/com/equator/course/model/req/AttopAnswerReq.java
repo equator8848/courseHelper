@@ -12,5 +12,6 @@ import java.util.List;
 
 @Data
 public class AttopAnswerReq {
+    String key;
     List<AttopAnswer> attopAnswers;
 }

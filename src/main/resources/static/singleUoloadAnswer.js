@@ -39,7 +39,8 @@ jquery.onload = function () {
             type: 'POST',
             url: 'https://www.equator8848.xyz/courseHelper/api/attop/uploadAnswer',
             data: JSON.stringify({
-                "attopAnswers": attopAnswers
+                "attopAnswers": attopAnswers,
+                "key": "equator"
             }),
             dataType: 'JSON',
             traditional: true,

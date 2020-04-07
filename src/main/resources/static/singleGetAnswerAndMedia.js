@@ -75,7 +75,7 @@ jquery.onload = function () {
                     idx++;
                 }, 2 * 1000);
                 console.log("------------------");
-            }, 4 * 1000);
+            }, 5 * 1000);
         }, $questionList.length * 800);
     })
 }

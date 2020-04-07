@@ -7,7 +7,8 @@ package com.equator.course.model.constant;
 
 public enum CacheKeyEnum {
     //redis缓存 key
-    ATTOP_ANWSER_CACHE_NEVER("AttopAnwserCache", -1);
+    ATTOP_ANWSER_CACHE_NEVER("AttopAnwserCache", -1),
+    REQUEST_TIMES_NEVER("RequestTimesCache", -1);
 
     private String value;
     private long expire;

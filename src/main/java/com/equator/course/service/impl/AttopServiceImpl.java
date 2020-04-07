@@ -1,9 +1,11 @@
 package com.equator.course.service.impl;
 
+import com.equator.course.model.constant.SecurityConfiguration;
 import com.equator.course.model.dto.AttopAnswer;
 import com.equator.course.model.req.AttopAnswerReq;
 import com.equator.course.service.AttopService;
 import com.equator.course.service.cache.AttopAnswerCache;
+import com.equator.course.service.cache.RequestTimesCache;
 import com.equator.course.service.util.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,9 +21,14 @@ import java.util.List;
 public class AttopServiceImpl implements AttopService {
     @Autowired
     private AttopAnswerCache attopAnswerCache;
+    @Autowired
+    private RequestTimesCache requestTimesCache;
 
     @Override
     public Response uploadAnswer(AttopAnswerReq attopAnswerReq) {
+        if (SecurityConfiguration.UPLOAD_ANWSER_KEY.getVal().equals(attopAnswerReq.getKey())) {
+            return Response.forbidden("为了防止答案被污染，请在github上联系管理员获取密钥", null);
+        }
         attopAnswerReq.getAttopAnswers().forEach((answer) -> {
             if (!"".equals(answer.getQuestionTitle())) {
                 attopAnswerCache.setCache(answer.getQuestionTitle(), answer.getAnswerList());
@@ -32,6 +39,7 @@ public class AttopServiceImpl implements AttopService {
 
     @Override
     public Response getAnswer(String questionTitle) {
+        requestTimesCache.add();
         return Response.success("答案获取成功", attopAnswerCache.getCache(questionTitle));
     }
 }
