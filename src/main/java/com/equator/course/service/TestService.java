@@ -9,4 +9,5 @@ import com.equator.course.service.util.Response;
 
 public interface TestService {
     Response ping(String key);
+    Response getRequestTimes();
 }

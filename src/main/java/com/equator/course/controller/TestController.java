@@ -23,4 +23,10 @@ public class TestController {
     public Response ping(String key) {
         return testService.ping(key);
     }
+
+
+    @GetMapping("/getRequestTimes")
+    public Response getRequestTimes() {
+        return testService.getRequestTimes();
+    }
 }

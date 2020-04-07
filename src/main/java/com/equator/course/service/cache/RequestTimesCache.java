@@ -18,4 +18,8 @@ public class RequestTimesCache {
     public void add() {
         redisTemplate.opsForValue().increment(CacheKeyEnum.REQUEST_TIMES_NEVER.getValue());
     }
+
+    public long get(){
+        return (long) redisTemplate.opsForValue().get(CacheKeyEnum.REQUEST_TIMES_NEVER.getValue());
+    }
 }
