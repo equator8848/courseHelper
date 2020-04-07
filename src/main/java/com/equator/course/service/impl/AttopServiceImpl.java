@@ -26,7 +26,7 @@ public class AttopServiceImpl implements AttopService {
 
     @Override
     public Response uploadAnswer(AttopAnswerReq attopAnswerReq) {
-        if (SecurityConfiguration.UPLOAD_ANWSER_KEY.getVal().equals(attopAnswerReq.getKey())) {
+        if (SecurityConfiguration.UPLOAD_ANSWER_KEY.getVal().equals(attopAnswerReq.getKey())) {
             return Response.forbidden("为了防止答案被污染，请在github上联系管理员获取密钥", null);
         }
         attopAnswerReq.getAttopAnswers().forEach((answer) -> {

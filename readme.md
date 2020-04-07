@@ -4,7 +4,7 @@
 
 > 目前有题库：毛概、中国近现代史纲要（无需重复上传）
 
-> 这里提供一个有思修、马克思，近代史、毛概课程的账号——账号：13206032678，密码：123456，需要马克思，思修的可以登录上传题库
+> 管理员可以提供一个有思修、马克思，近代史、毛概课程的账号，需要马克思，思修题库的可以登录上传题库（联系管理员获取）
 
 
 ## 最佳实践（写在前面）
@@ -65,13 +65,7 @@ window.location.href = url;
 4. 输入对应代码即可上传答案（将问题与答案上传到服务器保存）
 5. 进入第一章第二节的页面，重复以上步骤
 6. [Js代码](/src/main/resources/static/singleUoloadAnswer.js) 
-```
-// 上传答案
-var s = document.createElement('script');
-s.src = "https://www.equator8848.xyz/courseHelper/singleUoloadAnswer.js";
-s.charset = 'utf-8';
-document.getElementsByTagName('head')[0].appendChild(s);
-```
+7. 上传通道需要密钥，请联系管理员获取！
 
 
 ## 截图说明
