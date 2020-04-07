@@ -5,25 +5,29 @@
 > 目前有题库：毛概、中国近现代史纲要（无需重复上传）
 
 > 这里提供一个有思修、马克思，近代史、毛概课程的账号——账号：13206032678，密码：123456，需要马克思，思修的可以登录上传题库
-## 思路
-### 弱智在哪里呢？
-- 只能做题，哈哈哈 这里有刷时间与媒体评论的软件 [至善网刷客，作者：超级马丁](至善网.zip)
-- 需要手动换页，希望有大佬告诉我怎么换页（单纯的Js实现）
-### 导入题库（导入一次即可）
-1. 找到一个基本做完了的的至善网账号
-2. 进入第一章第一节的页面
-3. 开启浏览器控制台
-4. 输入对应代码即可上传答案（将问题与答案上传到服务器保存）
-5. 进入第一章第二节的页面，重复以上步骤
-6. [Js代码](/src/main/resources/static/singleUoloadAnswer.js) 
+
+
+## 最佳实践（写在前面）
+1. 进入课程页面
+2. 按住键盘Ctrl键，点击每一节的标题打开多个标签页（可以并行地刷时间）
+![avatar](src/main/resources/images/多开.png)
+3. 在每一个标签页按F12呼出控制台，输入命令，等待即可
 ```
-// 上传答案
 var s = document.createElement('script');
-s.src = "https://www.equator8848.xyz/courseHelper/singleUoloadAnswer.js";
+s.src = "https://www.equator8848.xyz/courseHelper/singleGetAnswer.js";
 s.charset = 'utf-8';
 document.getElementsByTagName('head')[0].appendChild(s);
 ```
-### 开始刷题
+## 思路
+
+
+### 弱智在哪里呢？
+- 只能做题和刷媒体评论，哈哈哈
+- 这里也有刷时间与媒体评论的软件（功能很完善，但是没有题库），不过基本用不上了 [至善网刷客，作者：超级马丁](至善网.zip)
+- 需要手动换页，希望有大佬告诉我怎么换页（单纯的Js实现）
+
+
+### 刷题
 1. 正常登录自己的至善网账号
 2. 进入第一章第一节的页面
 3. 开启浏览器控制台
@@ -43,6 +47,24 @@ $pages = $('.nHalf');
 var url = $($pages[0]).children('a:first').attr('href');
 window.location.href = url;
 ```
+
+
+### 导入题库（导入一次即可）
+1. 找到一个基本做完了的的至善网账号
+2. 进入第一章第一节的页面
+3. 开启浏览器控制台
+4. 输入对应代码即可上传答案（将问题与答案上传到服务器保存）
+5. 进入第一章第二节的页面，重复以上步骤
+6. [Js代码](/src/main/resources/static/singleUoloadAnswer.js) 
+```
+// 上传答案
+var s = document.createElement('script');
+s.src = "https://www.equator8848.xyz/courseHelper/singleUoloadAnswer.js";
+s.charset = 'utf-8';
+document.getElementsByTagName('head')[0].appendChild(s);
+```
+
+
 ## 截图说明
 - 输入指令
 ![avatar](src/main/resources/images/控制台输入代码.jpg)

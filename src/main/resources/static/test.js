@@ -14,7 +14,36 @@ jquery.onload = function () {
             async: false
         });
         // 中文显示
-        console.log('欢迎使用由Equator提供的刷题脚本（本脚本仅供娱乐）...');
+        console.log('欢迎使用由Equator提供的刷题脚本（本脚本仅供娱乐，富强民主文明和谐）...');
+
+        // 媒体评价
+        $mediaBtns = $('.BT_ping');
+        idx = 0;
+        mediaWork = setInterval(function () {
+            if (idx > $mediaBtns.length) {
+                console.log("媒体评价全部完成!");
+                clearInterval(mediaWork);
+                return;
+            }
+            if ($($mediaBtns[idx]).html() == "已评价") {
+                idx++;
+                return;
+            }
+            console.log("点击评论按钮");
+            $($mediaBtns[idx]).click();
+            setTimeout(function () {
+                console.log("点击好评按钮");
+                $("#pageiframe").contents().find(".ping_btn_3:first").click();
+                console.log("点击确认按钮");
+                $("#pageiframe").contents().find(".aui_state_highlight:first").click();
+                console.log("点击关闭按钮");
+                $(".aui_close").click();
+                idx++;
+            }, 2 * 1000);
+            console.log("------------------");
+        }, 3 * 1000);
+
+
         var $questionList = $('.un-ans');
         for (var i = 0; i < $questionList.length; i++) {
             var questionTitle = $($questionList[i]).find('p:first').html();

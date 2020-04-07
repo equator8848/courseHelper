@@ -44,8 +44,35 @@ jquery.onload = function () {
         setTimeout(function () {
             $('.btn100_org:first').click();
             $('.aui_state_highlight:first').click(function () {
-                console.log("提交答题答案！");
-                window.location.reload();
+                console.log("提交答题答案，开始媒体评论！");
+                // 媒体评价
+                $mediaBtns = $('.BT_ping');
+                idx = 0;
+                mediaWork = setInterval(function () {
+                    if (idx >= $mediaBtns.length) {
+                        console.log("媒体评价全部完成!");
+                        clearInterval(mediaWork);
+                        window.location.reload();
+                        return;
+                    }
+                    if ($($mediaBtns[idx]).html() == "已评价") {
+                        console.log(idx + " 已评价");
+                        idx++;
+                        return;
+                    }
+                    console.log("点击评论按钮");
+                    $($mediaBtns[idx]).click();
+                    setTimeout(function () {
+                        console.log("点击好评按钮");
+                        $("#pageiframe").contents().find(".ping_btn_3:first").click();
+                        console.log("点击确认按钮");
+                        $("#pageiframe").contents().find(".aui_state_highlight:first").click();
+                        console.log("点击关闭按钮");
+                        $(".aui_close").click();
+                        idx++;
+                    }, 2 * 1000);
+                    console.log("------------------");
+                }, 4 * 1000);
             });
             $('.aui_state_highlight:first').click();
         }, $questionList.length * 800);
