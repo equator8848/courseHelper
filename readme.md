@@ -1,5 +1,4 @@
 # 一个弱智的至善网刷题助手
-> 只刷题，媒体评论可以使用之前的那个刷客来刷，时间可以按住Ctrl点击章节打开多个浏览器标签页并行地刷时间。
 > 部分题目没有答案是因为导入题库的那个账号有没做完的，或者机会用完了的
 
 > 目前有题库：毛概、中国近现代史纲要（无需重复上传）
@@ -44,20 +43,6 @@ document.getElementsByTagName('head')[0].appendChild(s);
 4. 输入对应代码即可自动作答（从服务器获取答案）
 5. 进入第一章第二节的页面，重复以上步骤
 6. [Js代码](/src/main/resources/static/singleGetAnswer.js) 
-```
-// 回答问题
-var s = document.createElement('script');
-s.src = "https://www.equator8848.xyz/courseHelper/singleGetAnswer.js";
-s.charset = 'utf-8';
-document.getElementsByTagName('head')[0].appendChild(s);
-```
-7. ~~小技巧 如果之前的都完成了的话（包括习题、评论、时间），可以使用如下代码快速找到哪些页面没有刷（当然之前需要至少使用上面的刷题脚本刷了一次）~~（鸡肋）
-```
-$pages = $('.nHalf');
-var url = $($pages[0]).children('a:first').attr('href');
-window.location.href = url;
-```
-
 
 ### 导入题库（导入一次即可）
 1. 找到一个基本做完了的的至善网账号
