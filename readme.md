@@ -13,6 +13,14 @@
 ![avatar](src/main/resources/images/多开.png)
 3. 在每一个标签页按F12呼出控制台，输入命令，等待即可
 ```
+只回答问题
+var s = document.createElement('script');
+s.src = "https://www.equator8848.xyz/courseHelper/singleGetAnswer.js";
+s.charset = 'utf-8';
+document.getElementsByTagName('head')[0].appendChild(s);
+```
+```
+媒体与问题
 var s = document.createElement('script');
 s.src = "https://www.equator8848.xyz/courseHelper/singleGetAnswerAndMedia.js";
 s.charset = 'utf-8';
