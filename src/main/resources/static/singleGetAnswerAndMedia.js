@@ -44,7 +44,7 @@ jquery.onload = function () {
         setTimeout(function () {
             $('.btn100_org:first').click();
             $('.aui_state_highlight:first').click(function () {
-                console.log("提交答题答案，开始媒体评论！");
+                console.log("题目已完成，开始媒体评论！");
                 // 媒体评价
                 $mediaBtns = $('.BT_ping');
                 idx = 0;

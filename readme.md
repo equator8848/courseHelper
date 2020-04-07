@@ -13,16 +13,16 @@
 ![avatar](src/main/resources/images/多开.png)
 3. 在每一个标签页按F12呼出控制台，输入命令，等待即可
 ```
-只回答问题
+媒体与问题
 var s = document.createElement('script');
-s.src = "https://www.equator8848.xyz/courseHelper/singleGetAnswer.js";
+s.src = "https://www.equator8848.xyz/courseHelper/singleGetAnswerAndMedia.js";
 s.charset = 'utf-8';
 document.getElementsByTagName('head')[0].appendChild(s);
 ```
 ```
-媒体与问题
+只回答问题
 var s = document.createElement('script');
-s.src = "https://www.equator8848.xyz/courseHelper/singleGetAnswerAndMedia.js";
+s.src = "https://www.equator8848.xyz/courseHelper/singleGetAnswer.js";
 s.charset = 'utf-8';
 document.getElementsByTagName('head')[0].appendChild(s);
 ```
@@ -51,7 +51,7 @@ document.getElementsByTagName('head')[0].appendChild(s);
 ```
 7. 小技巧 如果之前的都完成了的话（包括习题、评论、时间），可以使用如下代码快速找到哪些页面没有刷（当然之前需要至少使用上面的刷题脚本刷了一次）
 ```
-$pages = $('.nHalf');
+$pages = $('.nHalf,.on');
 var url = $($pages[0]).children('a:first').attr('href');
 window.location.href = url;
 ```
