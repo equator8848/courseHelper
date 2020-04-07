@@ -11,6 +11,7 @@
 1. 进入课程页面
 2. 按住键盘Ctrl键，点击每一节的标题打开多个标签页（可以并行地刷时间）
 ![avatar](src/main/resources/images/多开.png)
+![avatar](src/main/resources/images/标签页多开.jpg)
 3. 在每一个标签页按F12呼出控制台，输入命令，等待即可
 ```
 媒体与问题
