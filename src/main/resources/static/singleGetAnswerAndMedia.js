@@ -43,6 +43,7 @@ jquery.onload = function () {
         console.log("请等待一段时间（每道题等待0.8秒），以免提交过快...完成之后请手动切换章节，按方向键上键重复命令")
         setTimeout(function () {
             if ($questionList.length > 0) {
+                console.log("有需要提交的题目");
                 $('.btn100_org:first').click();
                 $('.aui_state_highlight:first').click();
             }
