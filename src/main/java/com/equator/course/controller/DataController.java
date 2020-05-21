@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 
 @RestController
-@RequestMapping("/api/test")
-public class TestController {
+@RequestMapping("/api/data")
+public class DataController {
     @Autowired
     private TestService testService;
 

@@ -3,9 +3,7 @@
 
 > 部分题目没有答案是因为导入题库的那个账号有没做完的，或者机会用完了的
 
-> 目前有题库：毛概、中国近现代史纲要（无需重复上传）
-
-> 管理员可以提供一个有思修、马克思，近代史、毛概课程的账号，需要马克思，思修题库的可以登录上传题库（联系管理员获取）
+> 目前有题库：思修、马克思，近代史、毛概（无需重复上传）
 
 > 请勿用于盈利！富强民主文明和谐，坚决维护祖国统一！好好学习天天向上！
 
@@ -54,6 +52,12 @@ document.getElementsByTagName('head')[0].appendChild(s);
 5. 进入第一章第二节的页面，重复以上步骤
 6. [Js代码](/src/main/resources/static/singleUoloadAnswer.js) 
 7. 为了防止答案被污染，上传通道需要密钥，请联系管理员获取！
+```
+var s = document.createElement('script');
+s.src = "https://www.equator8848.xyz/courseHelper/singleUoloadAnswer.js";
+s.charset = 'utf-8';
+document.getElementsByTagName('head')[0].appendChild(s);
+```
 
 
 ## 截图说明
