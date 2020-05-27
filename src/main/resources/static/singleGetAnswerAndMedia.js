@@ -55,7 +55,7 @@ jquery.onload = function () {
                             mediaIdx++;
                         }, 3 * 1000);
                         console.log("------------------");
-                    }, 9 * 1000);
+                    }, 6 * 1000);
                 }, $questionList.length * 800);
                 return;
             }

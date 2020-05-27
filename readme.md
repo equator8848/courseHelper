@@ -9,6 +9,8 @@
 
 > 请勿用于盈利！富强民主文明和谐，坚决维护祖国统一！好好学习天天向上！
 
+> 查看请求总次数 `https://www.equator8848.xyz/courseHelper/api/data/getRequestTimes`
+
 ## 最佳实践（写在前面）
 1. 进入课程页面
 2. 按住键盘Ctrl键，点击每一节的标题打开多个标签页（可以并行地刷时间）
