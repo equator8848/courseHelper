@@ -55,8 +55,9 @@ jquery.onload = function () {
                             mediaIdx++;
                         }, 3 * 1000);
                         console.log("------------------");
-                    }, 6 * 1000);
+                    }, 9 * 1000);
                 }, $questionList.length * 800);
+                return;
             }
             $questionList[questionIdx].scrollIntoView();
             var questionTitle = $($questionList[questionIdx]).find('p:first').html();
