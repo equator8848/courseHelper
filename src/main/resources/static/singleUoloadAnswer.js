@@ -51,6 +51,7 @@ jquery.onload = function () {
                 if (data.status == 200) {
                     console.log('题库上传成功');
                 } else {
+                    alert("题库上传失败！");
                     console.log('题库上传失败');
                 }
             }
