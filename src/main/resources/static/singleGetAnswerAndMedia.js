@@ -18,6 +18,7 @@ jquery.onload = function () {
         // 开始答题！
         var $questionList = $('.un-ans');
         for (var i = 0; i < $questionList.length; i++) {
+            $questionList[i].scrollIntoView();
             var questionTitle = $($questionList[i]).find('p:first').html();
             $.get('https://www.equator8848.xyz/courseHelper/api/attop/getAnswer', {
                 questionTitle: questionTitle
@@ -64,6 +65,7 @@ jquery.onload = function () {
                     return;
                 }
                 console.log("点击评论按钮");
+                $mediaBtns[idx].scrollIntoView();
                 $($mediaBtns[idx]).click();
                 setTimeout(function () {
                     console.log("点击好评按钮");
