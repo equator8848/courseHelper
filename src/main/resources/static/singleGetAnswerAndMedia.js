@@ -17,16 +17,56 @@ jquery.onload = function () {
         console.log('欢迎使用由Equator提供的刷题脚本（本脚本仅供娱乐，富强民主文明和谐）...');
         // 开始答题！
         var $questionList = $('.un-ans');
-        for (var i = 0; i < $questionList.length; i++) {
-            $questionList[i].scrollIntoView();
-            var questionTitle = $($questionList[i]).find('p:first').html();
+        questionIdx = 0;
+        questionWork = setInterval(function () {
+            if (questionIdx >= $questionList.length) {
+                console.log("题目已完成");
+                clearInterval(questionWork);
+                $('.btn100_org:first').click();
+                $('.aui_state_highlight:first').click();
+                console.log("请等待一段时间（每道题等待0.8秒），以免提交过快...完成之后请手动切换章节，按方向键上键重复命令")
+                setTimeout(function () {
+                    console.log("题目已完成，开始媒体评论！");
+                    // 媒体评价
+                    $mediaBtns = $('.BT_ping');
+                    mediaIdx = 0;
+                    mediaWork = setInterval(function () {
+                        if (mediaIdx >= $mediaBtns.length) {
+                            console.log("媒体评价全部完成!");
+                            clearInterval(mediaWork);
+                            window.location.reload();
+                            return;
+                        }
+                        if ($($mediaBtns[mediaIdx]).html() == "已评价") {
+                            console.log(mediaIdx + " 已评价");
+                            mediaIdx++;
+                            return;
+                        }
+                        console.log("点击评论按钮");
+                        $mediaBtns[mediaIdx].scrollIntoView();
+                        $($mediaBtns[mediaIdx]).click();
+                        setTimeout(function () {
+                            console.log("点击好评按钮");
+                            $("#pageiframe").contents().find(".ping_btn_3:first").click();
+                            console.log("点击确认按钮");
+                            $("#pageiframe").contents().find(".aui_state_highlight:first").click();
+                            console.log("点击关闭按钮");
+                            $(".aui_close").click();
+                            mediaIdx++;
+                        }, 3 * 1000);
+                        console.log("------------------");
+                    }, 6 * 1000);
+                }, $questionList.length * 800);
+            }
+            $questionList[questionIdx].scrollIntoView();
+            var questionTitle = $($questionList[questionIdx]).find('p:first').html();
             $.get('https://www.equator8848.xyz/courseHelper/api/attop/getAnswer', {
                 questionTitle: questionTitle
             }, function (data) {
                 if (data.status == 200 && data.data) {
                     var anwsers = data.data.split(',');
                     console.log("题目：" + questionTitle + "答案是：" + anwsers);
-                    var $inputs = $($questionList[i]).find('input');
+                    var $inputs = $($questionList[questionIdx]).find('input');
                     for (var j = 0; j < $inputs.length; j++) {
                         // console.log(anwsers, $($inputs[j]).val(), anwsers.indexOf($($inputs[j]).val()))
                         if (anwsers.indexOf($($inputs[j]).val()) >= 0) {
@@ -39,45 +79,8 @@ jquery.onload = function () {
                     console.log("题目：" + questionTitle + "没有找到答案！");
                 }
             });
+            questionIdx++;
             console.log('--------');
-        }
-        console.log("请等待一段时间（每道题等待0.8秒），以免提交过快...完成之后请手动切换章节，按方向键上键重复命令")
-        setTimeout(function () {
-            if ($questionList.length > 0) {
-                console.log("有需要提交的题目");
-                $('.btn100_org:first').click();
-                $('.aui_state_highlight:first').click();
-            }
-            console.log("题目已完成，开始媒体评论！");
-            // 媒体评价
-            $mediaBtns = $('.BT_ping');
-            idx = 0;
-            mediaWork = setInterval(function () {
-                if (idx >= $mediaBtns.length) {
-                    console.log("媒体评价全部完成!");
-                    clearInterval(mediaWork);
-                    window.location.reload();
-                    return;
-                }
-                if ($($mediaBtns[idx]).html() == "已评价") {
-                    console.log(idx + " 已评价");
-                    idx++;
-                    return;
-                }
-                console.log("点击评论按钮");
-                $mediaBtns[idx].scrollIntoView();
-                $($mediaBtns[idx]).click();
-                setTimeout(function () {
-                    console.log("点击好评按钮");
-                    $("#pageiframe").contents().find(".ping_btn_3:first").click();
-                    console.log("点击确认按钮");
-                    $("#pageiframe").contents().find(".aui_state_highlight:first").click();
-                    console.log("点击关闭按钮");
-                    $(".aui_close").click();
-                    idx++;
-                }, 2 * 1000);
-                console.log("------------------");
-            }, 5 * 1000);
-        }, $questionList.length * 800);
+        }, 3 * 1000);
     })
 }

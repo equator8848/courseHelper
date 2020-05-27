@@ -18,19 +18,19 @@ jquery.onload = function () {
 
         // 媒体评价
         $mediaBtns = $('.BT_ping');
-        idx = 0;
+        mediaIdx = 0;
         mediaWork = setInterval(function () {
-            if (idx > $mediaBtns.length) {
+            if (mediaIdx > $mediaBtns.length) {
                 console.log("媒体评价全部完成!");
                 clearInterval(mediaWork);
                 return;
             }
-            if ($($mediaBtns[idx]).html() == "已评价") {
-                idx++;
+            if ($($mediaBtns[mediaIdx]).html() == "已评价") {
+                mediaIdx++;
                 return;
             }
             console.log("点击评论按钮");
-            $($mediaBtns[idx]).click();
+            $($mediaBtns[mediaIdx]).click();
             setTimeout(function () {
                 console.log("点击好评按钮");
                 $("#pageiframe").contents().find(".ping_btn_3:first").click();
@@ -38,7 +38,7 @@ jquery.onload = function () {
                 $("#pageiframe").contents().find(".aui_state_highlight:first").click();
                 console.log("点击关闭按钮");
                 $(".aui_close").click();
-                idx++;
+                mediaIdx++;
             }, 2 * 1000);
             console.log("------------------");
         }, 3 * 1000);
