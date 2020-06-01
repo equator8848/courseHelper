@@ -9,8 +9,6 @@
 
 > 目前有题库：毛概，马克思，近代史（2020年），题库可能过时的，保险起见可以找已经做完的同学弄一下题库
 
-> 查看请求总次数（刷完一次课可能请求三四百次，开发仓促，没多设计） `https://www.equator8848.xyz/courseHelper/api/data/getRequestTimes`
-
 ## 最佳实践（写在前面）
 1. 进入课程页面
 2. 按住键盘Ctrl键，点击每一节的标题打开多个标签页（可以并行地刷时间）
@@ -31,8 +29,6 @@ s.src = "https://www.equator8848.xyz/courseHelper/singleGetAnswer.js";
 s.charset = 'utf-8';
 document.getElementsByTagName('head')[0].appendChild(s);
 ```
-## 打赏
-- ![avatar](src/main/resources/images/donate.jpg)
 
 ## 思路
 
