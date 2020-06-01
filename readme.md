@@ -31,6 +31,9 @@ s.src = "https://www.equator8848.xyz/courseHelper/singleGetAnswer.js";
 s.charset = 'utf-8';
 document.getElementsByTagName('head')[0].appendChild(s);
 ```
+## 打赏
+- ![avatar](src/main/resources/images/donate.jpg)
+
 ## 思路
 
 ### 弱智在哪里呢？
@@ -70,6 +73,3 @@ document.getElementsByTagName('head')[0].appendChild(s);
 ![avatar](src/main/resources/images/答题完毕.jpg)
 - 完成，切换到下一个章节
 ![avatar](src/main/resources/images/答题完毕自动刷新.jpg)
-
-## 打赏
-- ![avatar](src/main/resources/images/donate.jpg)
