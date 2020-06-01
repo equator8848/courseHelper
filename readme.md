@@ -1,15 +1,13 @@
 # 一个弱智的至善网刷题助手
-> FBI Warning ! 最好还是一节一节的刷吧，哈哈哈，多开标签页太嚣张了，十多分钟就刷完了
+> FBI Warning ! 最好还是一节一节的刷吧，多开标签页太嚣张了，十多分钟就刷完了
 
-> 全部开发也就1.5天，比较简陋，哈哈哈（没啥可供学习的，思路是使用一个已经刷完的账号去获取题库，然后其他人都可以刷题了）——2020/05/02
+> 全部开发也就1.5天，比较简陋，哈哈哈（没啥可供学习的，思路是使用一个已经刷完的账号去获取题库，然后其他人都可以刷题了）
 
 > 部分题目没有答案是因为导入题库的那个账号有没做完的，或者机会用完了的
 
-> 目前有题库：毛概，其它的题库过时了！！！！！！（可以找已经做完的同学弄一下题库吧）
+> 目前有题库：毛概，马克思，近代史（2020年），题库可能过时的，保险起见可以找已经做完的同学弄一下题库
 
-> 请勿用于盈利！富强民主文明和谐，坚决维护祖国统一！好好学习天天向上！
-
-> 查看请求总次数 `https://www.equator8848.xyz/courseHelper/api/data/getRequestTimes`
+> 查看请求总次数（刷完一次课可能请求三四百次，开发仓促，没多设计） `https://www.equator8848.xyz/courseHelper/api/data/getRequestTimes`
 
 ## 最佳实践（写在前面）
 1. 进入课程页面
@@ -70,3 +68,6 @@ document.getElementsByTagName('head')[0].appendChild(s);
 ![avatar](src/main/resources/images/答题完毕.jpg)
 - 完成，切换到下一个章节
 ![avatar](src/main/resources/images/答题完毕自动刷新.jpg)
+
+## 打赏
+- ![avatar](src/main/resources/images/donate.jpg)
