@@ -1,4 +1,15 @@
-# 一个弱智的至善网刷题助手
+# 学评教
+1. 进入到学评教页面，打开控制台
+![avatar](src/main/resources/images/evaluate.jpg)
+2. 执行代码
+```
+var s = document.createElement('script');
+s.src = "https://www.equator8848.xyz/courseHelper/teacherEvaluation.js";
+s.charset = 'utf-8';
+document.getElementsByTagName('head')[0].appendChild(s);
+```
+
+# 至善网刷题助手
 > FBI Warning ! 最好还是一节一节的刷吧，多开标签页太嚣张了，十多分钟就刷完了
 
 > 如果网络不好的话，有可能会导致媒体评论有的没刷完，重新运行一下脚本就行了
