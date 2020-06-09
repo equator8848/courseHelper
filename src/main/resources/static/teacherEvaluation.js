@@ -12,7 +12,7 @@ var prompt = function () {
     return 1
 }
 var worker = setInterval(function () {
-    if (i > selectBtns.length) {
+    if (i >= selectBtns.length) {
         clearInterval(worker);
         window.location.reload();
         return;
