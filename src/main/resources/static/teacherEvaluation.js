@@ -1,9 +1,20 @@
 // 学评教
 var selectBtns = document.getElementsByClassName("xpjBtn");
 var i = 0;
+// 不能放在setInterval里面
+var confirm = function () {
+    return 1
+}
+var alert = function () {
+    return 1
+}
+var prompt = function () {
+    return 1
+}
 var worker = setInterval(function () {
     if (i > selectBtns.length) {
         clearInterval(worker);
+        window.location.reload();
         return;
     }
     selectBtns[i].click();
@@ -17,9 +28,6 @@ var worker = setInterval(function () {
         textareaOption[1].value = "已经做得非常好了";
         var saveBtn = document.getElementsByClassName("saveBtn");
         saveBtn[0].click();
-        var confirm = function () {
-            return 1
-        }
         i++;
     }, 3 * 1000);
 }, 8 * 1000);
